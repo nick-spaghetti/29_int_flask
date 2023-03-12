@@ -46,6 +46,7 @@ button:focus {
 
 nav {
     margin: auto;
+    display: inline;
 }
 
 
@@ -71,8 +72,15 @@ thead {
 
 form {
     border: 1px solid #1D0C11;
-    color: #F5F5F5;
+    color: #1D0C11;
     padding: 1em;
+}
+
+.form-field {
+    border: 1px solid #1D0C11;
+    color: red;
+    padding: 0.25em;
+    /* margin: 20px; */
 }
 
 .red-thing {
@@ -102,7 +110,7 @@ img {
     visibility: hidden;
 }
 
-nav>label {
+nav label {
     cursor: pointer;
     text-indent: -9999px;
     width: 60px;
@@ -113,7 +121,7 @@ nav>label {
     position: relative;
 }
 
-nav>label:after {
+nav label:after {
     content: '';
     position: absolute;
     top: 5px;
@@ -139,6 +147,11 @@ nav>label:active:after {
 }
 
 .dark {
+    background-color: #1D0C11;
+    color: #F5F5F5;
+}
+
+.dark form {
     background-color: #1D0C11;
     color: #F5F5F5;
 }

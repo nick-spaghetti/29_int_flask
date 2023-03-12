@@ -35,7 +35,7 @@ def add_pet():
         flash(f"{new_pet.name} added.")
         return redirect(url_for('list_pets'))
     else:
-        return render_template("new_pet.html", form=form, title='new pet form')
+        return render_template("/forms/new_pet.html", form=form, title='new pet form')
 
 
 @app.route('/pets/<int:pet_id>/edit', methods=['get', 'post'])
@@ -50,4 +50,4 @@ def edit_pet(pet_id):
         flash(f"{pet.name} updated.")
         return redirect(url_for('list_pets'))
     else:
-        return render_template("pet_edit_form.html", form=form, pet=pet, title='edit pet info')
+        return render_template("/forms/pet_edit_form.html", form=form, pet=pet, title='edit pet info')
