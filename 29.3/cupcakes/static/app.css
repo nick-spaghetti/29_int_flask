@@ -1,0 +1,266 @@
+/* 
+#EBEBD3
+#823221
+#576975
+#071736 
+*/
+
+body {
+    background-color: #EBEBD3;
+    color: #071736;
+    /* position: absolute; */
+    margin: auto;
+    font-family: montserrat;
+}
+
+#content {
+    /* margin: auto; */
+    margin-left: 30vh;
+    margin-right: 30vh;
+
+}
+
+.delete {
+    background-color: #823221;
+    color: #EBEBD3;
+}
+
+.delete:hover {
+    background-color: #a1321a;
+    color: #EBEBD3;
+    outline: none;
+    border-style: none;
+    padding: 0.5em;
+    transition: 0.125s;
+}
+
+.delete:focus {
+    background-color: #823221;
+    color: #EBEBD3;
+    outline: none;
+    border-style: none;
+    padding: 0.5em;
+    transition: 0.125s;
+    transform: scale(110%);
+}
+
+.dark .delete {
+    background-color: #823221;
+    color: #EBEBD3;
+}
+
+.dark .delete:hover {
+    background-color: #ae2b0e;
+    color: #EBEBD3;
+    outline: none;
+    border-style: none;
+    padding: 0.5em;
+    transition: 0.125s;
+}
+
+.dark .delete:focus {
+    background-color: #ae2b0e;
+    color: #EBEBD3;
+    outline: none;
+    border-style: none;
+    padding: 0.5em;
+    transition: 0.125s;
+    transform: scale(110%);
+}
+
+button {
+    background-color: #576975;
+    color: #EBEBD3;
+    border-style: none;
+    border-radius: 10px;
+    outline: none;
+    border-style: none;
+    margin-top: 10px;
+    padding: 0.5em;
+}
+
+button:hover {
+    background-color: #6d8493;
+    color: #EBEBD3;
+    outline: none;
+    border-style: none;
+    padding: 0.5em;
+    transition: 0.125s;
+}
+
+button:focus {
+    background-color: #576975;
+    color: #EBEBD3;
+    outline: none;
+    border-style: none;
+    padding: 0.5em;
+    transition: 0.125s;
+    transform: scale(110%);
+}
+
+.dark button {
+    background-color: #EBEBD3;
+    color: #071736;
+    border-style: none;
+    border-radius: 10px;
+    outline: none;
+    border-style: none;
+    margin-top: 10px;
+    padding: 0.5em;
+}
+
+.dark button:hover {
+    background-color: #cdc19c;
+    color: #071736;
+    outline: none;
+    border-style: none;
+    padding: 0.5em;
+    transition: 0.125s;
+}
+
+.dark button:focus {
+    background-color: #EBEBD3;
+    color: #071736;
+    outline: none;
+    border-style: none;
+    padding: 0.5em;
+    transition: 0.125s;
+    transform: scale(110%);
+}
+
+nav {
+    margin: auto;
+    display: inline;
+}
+
+a {
+    text-decoration: none;
+    color: #071736;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #1c4aa6;
+}
+
+a::after {
+    text-decoration: none;
+    color: #0d2962;
+}
+
+
+form {
+    /* border: 1px solid #071736; */
+    color: #1D0C11;
+    padding: 1em;
+}
+
+nav {
+    margin: auto;
+}
+
+
+#switch {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+nav label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 60px;
+    height: 25px;
+    background: #576975;
+    display: block;
+    border-radius: 30px;
+    position: relative;
+}
+
+nav label:after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 15px;
+    height: 15px;
+    background: #071736;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+#switch:checked+label {
+    background: #823221;
+}
+
+#switch:checked+label:after {
+    left: calc(98% - 5px);
+    transform: translateX(-100%);
+}
+
+nav>label:active:after {
+    width: 30px;
+}
+
+.dark {
+    background-color: #071736;
+    color: #EBEBD3;
+}
+
+.dark form {
+    background-color: #071736;
+    color: #EBEBD3;
+}
+
+.dark button {
+    background-color: #EBEBD3;
+    color: #071736;
+}
+
+
+#dark_mode {
+    display: inline;
+}
+
+img {
+    height: 50px;
+    width: auto;
+}
+
+.grid-container {
+    max-width: 100%;
+    position: relative;
+    /* text-align: justify; */
+    padding: 0.5em;
+    display: inline-block;
+    gap: 50px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.grid-item {
+    width: 140px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    /* text-align: center; */
+}
+
+.grid-item img {
+    width: 100%;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+li {
+    margin: auto;
+    list-style: none;
+    text-align: right;
+}
+
+.info-image {
+    width: 50%;
+    height: auto;
+    margin: auto;
+}

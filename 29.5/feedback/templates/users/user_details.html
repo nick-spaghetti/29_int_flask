@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %} {{user.id}} {% endblock %}
+{% block content %}
+<!--  -->
+<h1 class="title">{{user.greet()}}</h1>
+<!-- <blockquote>
+    <p>{{user.greet()}}</p>
+</blockquote> -->
+<p>id: {{user.id}}</p>
+<p>name: {{user.first_name}} {{user.last_name}}</p>
+{% if session['user_id'] == user.id %}
+<form>
+    <button formmethod="get" formaction="/users/{{user.id}}/reviews/new">new review</button>
+    <button formaction="/users/{{user.id}}/delete" formmethod="post">delete</button>
+</form>
+{% endif %}
+{% for review in user.reviews %}
+<div class="review">
+    <div class="review_body">
+        <h2><a href="/reviews/{{review.id}}">{{review.title}}</a></h2>
+        <p>{{review.content}}</p>
+        <p>
+            <small>by <a href="/users/{{review.user.id}}">{{review.user.username}}</a> on {{review.date_time}} •
+            </small>
+            {% if reviews.tags %}
+            <b>tags:</b>
+            {% for tags in reviews.tags %}
+            <a href="/"> | {{reviews.tags.name}} | </a>
+            {% endfor %}
+            {% else %}
+            <a href="/"> | {{review.date_time}} | </a>
+        </p>
+        {% endif %}
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

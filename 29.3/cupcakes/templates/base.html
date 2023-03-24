@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/app.css">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+    <div id="content">
+        <nav>
+            <div id="dark_mode">
+                <input type="checkbox" id="switch" /><label for="switch">dark mode</label>
+            </div>
+            <form class="links">
+                <button formaction="/" formmethod="get">home</button>
+                <button formaction="/api/cupcakes/new" formmethod="get">add cupcake</button>
+            </form>
+            <!-- <small>dark mode</small> -->
+        </nav>
+        <div id="messages">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            <section class="messages">
+                {% if messages %}
+                {% for category, message in messages %}
+                <p class="{{category}}">{{message}}</p>
+                {% endfor %}
+            </section>
+            {% endif %}
+            {% endwith %}
+        </div>
+        <div id="block">
+            {% block content %}
+            body content goes here from child template
+            {% endblock %}
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"
+        integrity="sha256-T/f7Sju1ZfNNfBh7skWn0idlCBcI3RwdLSS4/I7NQKQ=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="/static/app.js"></script>
+</body>
+
+</html>

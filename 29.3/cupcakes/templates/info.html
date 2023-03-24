@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %} {{title}} {% endblock %}
+{% block content %}
+<h1 class="title">{{cupcake.flavor}}</h1>
+<!-- <p>
+    {{cupcake.flavor}}
+</p> -->
+<!-- <p>
+    {{cupcake.size}}
+</p>
+<p>
+    {{cupcake.rating}}
+</p> -->
+<form name="update-cupcake-form">
+    {% include "_form.html" %}
+    <button type="submit">update</button>
+    <button class="delete" data-id="{{cupcake.id}}" formaction="/">delete</button>
+</form>
+<form>
+</form>
+{% if cupcake.image %}
+<img src="data:image/jpg;charset=utf-8;base64,{{ cupcake.image.img | b64encode }}" alt="{{ cupcake.flavor }} Cupcake"
+    class="info-image">
+{% else %}
+<img src="{{ cupcake.img }}" alt="{{ cupcake.flavor }} cupcake" class="info-image">
+{% endif %}
+{% endblock %}

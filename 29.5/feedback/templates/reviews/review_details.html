@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}review: {{review.id}}{% endblock %}
+{% block content %}
+<!--  -->
+<div class="review">
+    <div class="review_body">
+        <h2>{{review.title}}</h2>
+        <p>{{review.content}}</p>
+        <p>
+            <small>by <a href="/users/{{review.user.id}}">{{review.user.username}}</a> on {{review.date_time}} •
+            </small>
+            {% if review.tags %}
+            <b>tags:</b>
+            {% for tags in reviews.tags %}
+            <a href="/"> | {{review.tag.name}} | </a>
+
+            {% endfor %}
+        </p>
+        {% endif %}
+    </div>
+</div>
+<p>
+    <!-- <i>by <a href="/users/{{review.user_id}}">{{review.user.username}}</a> on {{review.date_time}}</i> -->
+    {% if review.tags %}
+    {% for tag in tags %}
+    <b> | tags:</b>
+    <a href="tags/{{tag.id}}">| {{tag.name}} | </a>
+    {% endfor %}
+    {% endif %}
+</p>
+<form action="">
+    <button formaction="/users/{{review.user.id}}" formmethod="get">back</button>
+    {% if session['user_id'] == review.user.id %}
+    <button formaction="/reviews/{{review.id}}/edit" formmethod="get">edit</button>
+    <!-- <button formaction="/tags/new" formmethod="get">add tag</button> -->
+    <button formaction="/reviews/{{review.id}}/delete" formmethod="post">delete</button>
+    {% endif %}
+    <button formaction="/" formmethod="get">home</button>
+</form>
+{% endblock %}

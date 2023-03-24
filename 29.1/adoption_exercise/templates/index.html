@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %} {{title}} {% endblock %}
+{% block content %}
+<h1 class="title">adoption index</h1>
+<table>
+    <thead>
+        <th>name</th>
+        <th>photo</th>
+        <th>available</th>
+        <th></th>
+    </thead>
+    <tbody>
+        {% for pet in pets %}
+        <tr>
+            <form>
+                <td>{{pet.name}}
+                </td>
+            </form>
+            <td>
+                <img src="{{ pet.image_url() }}">
+                <!-- {{pet.pet_pic}} -->
+            </td>
+            <td>
+                {{pet.available}}
+            </td>
+            <td>
+                <button formaction="/pets/{{pet_id}}/edit" formmethod="get">edit</button>
+            </td>
+        </tr>
+        {% else %}
+        <div>No pets yet.</div>
+        {% endfor %}
+    </tbody>
+</table>
+<form>
+    <button formmethod="get" formaction="/new">add new pet</button>
+</form>
+{% endblock %}

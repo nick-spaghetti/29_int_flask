@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %} {{title}} {% endblock %}
+{% block content %}
+<!-- {% if 'user_id' in session %} -->
+<!-- {{session.user_id}} -->
+<!-- <div>
+    <h1 class="title">{{title}}</h1>
+</div> -->
+{% for review in reviews %}
+<div class="review">
+    <div class="review_body">
+        <h2><a href="/reviews/{{review.id}}">{{review.title}}</a></h2>
+        <p>{{review.content}}</p>
+        <p>
+            <small>by <a href="/users/{{review.user.id}}">{{review.user.username}}</a> on {{review.date_time}} •
+            </small>
+            {% if review.tags %}
+            <b>tags:</b>
+            {% for tags in reviews.tags %}
+            <a href="/tags/{{tag.id}}"> | {{review.tag.name}} | </a>
+
+            {% endfor %}
+        </p>
+        {% endif %}
+    </div>
+</div>
+{% endfor %}
+<!-- {% endif %} -->
+{% endblock %}

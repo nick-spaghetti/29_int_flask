@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %} {{title}} {% endblock %}
+{% block content %}
+<h1 class="title">{{title}}</h1>
+{% for ingredient in ingredients %}
+<div class="grid-container">
+    <ul>
+        <li>
+            <b>{{ingredient.name}} </b> {{ingredient.amount}}
+        </li>
+    </ul>
+    {% else %}
+    <div class="banner">
+        <h1>
+            No ingredients yet.
+        </h1>
+    </div>
+    {% endfor %}
+    {% endblock %}

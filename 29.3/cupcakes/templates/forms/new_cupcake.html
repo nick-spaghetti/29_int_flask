@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %} {{title}} {% endblock %}
+{% block content %}
+<h1>add a cupcake</h1>
+<form method="post">
+    {% include "_form.html" %}
+    <button>submit</button>
+</form>
+{% endblock %}

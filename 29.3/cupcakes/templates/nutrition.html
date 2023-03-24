@@ -1,0 +1,170 @@
+{% extends 'base.html' %}
+{% block title %} {{title}} {% endblock %}
+{% block content %}
+<h1 class="title">{{title}}</h1>
+{% for cupcake in cupcakes %}
+<table>
+    <thead>
+        <th></th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>serving size 18g</td>
+        </tr>
+        <tr>
+            <td>
+                <b>
+                    amount per serving
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>
+                    calories
+                </b>
+                38
+            </td>
+            <td style="text-align: right;">
+                <b>
+                    calories from fat
+                </b>
+                28
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td style="text-align: right;">
+                <b>
+                    % daily value*
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>
+                    total fat
+                </b>
+                3.1g
+            </td>
+            <td style="text-align: right;">
+                <b>
+                    5%
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-indent: 10px;">
+                saturated fat
+                2.8g
+            </td>
+            <td style="text-align: right;">
+                <b>
+                    14%
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>
+                    cholesterol 0mg
+                </b>
+            </td>
+            <td style="text-align: right;">
+                <b>
+                    0%
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>
+                    sodium
+                </b>
+                21g
+            </td>
+            <td style="text-align: right;">
+                <b>
+                    1%
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>
+                    potassium
+                </b>
+                51g
+            </td>
+            <td style="text-align: right;">
+                <b>
+                    1%
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>
+                    total carbohydrates
+                </b>
+                2.8g
+            </td>
+            <td style="text-align: right;">
+                <b>
+                    1%
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-indent: 10px;">
+                dietary fiber 0.7g
+            </td>
+            <td style="text-align: right;">
+                <b>
+                    3%
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-indent: 10px;">
+                sugars 1.4g
+            </td>
+            <td style="text-align: right;">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>
+                    protein
+                </b>
+                0.3g
+            </td>
+            <td style="text-align: right;">
+            </td>
+        </tr>
+        <tr style="width: 100%">
+            <td style="background-color: black">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                vitamin a 0%
+            </td>
+            <td style="text-align: right;">
+                vitamin c 2%
+            </td>
+        </tr>
+        <tr>
+            <td>
+                calcium 0%
+            </td>
+            <td style="text-align: right;">
+                iron 5%
+            </td>
+        </tr>
+    </tbody>
+</table>
+{% endfor %}
+{% endblock %}

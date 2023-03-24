@@ -1,0 +1,176 @@
+body {
+    background-color: #F5F5F5;
+    color: #1D0C11;
+    display: flex;
+    /* position: absolute; */
+    /* margin: auto; */
+}
+
+h1 {
+    color: #616E5E;
+}
+
+#content {
+    margin: auto;
+}
+
+button {
+    background-color: #616E5E;
+    color: #F5F5F5;
+    border-style: none;
+    border-radius: 10px;
+    outline: none;
+    border-style: none;
+    margin-top: 10px;
+    padding: 0.5em;
+}
+
+button:hover {
+    background-color: #7e8e7b;
+    color: #F5F5F5;
+    outline: none;
+    border-style: none;
+    padding: 0.5em;
+    transition: 0.125s;
+}
+
+button:focus {
+    background-color: #616E5E;
+    color: #F5F5F5;
+    outline: none;
+    border-style: none;
+    padding: 0.5em;
+    transition: 0.125s;
+    transform: scale(110%);
+}
+
+nav {
+    margin: auto;
+    display: inline;
+}
+
+
+li {
+    list-style: none;
+    margin-left: -10px;
+    /* padding: 0.125em; */
+}
+
+
+table {
+    border: 1px solid #616E5E;
+    text-align: left;
+    padding: 1em;
+    width: 500px
+}
+
+thead {
+    color: #F5F5F5;
+    background-color: #616E5E;
+    padding: 1em;
+}
+
+form {
+    border: 1px solid #1D0C11;
+    color: #1D0C11;
+    padding: 1em;
+}
+
+.form-field {
+    border: 1px solid #1D0C11;
+    color: red;
+    padding: 0.25em;
+    /* margin: 20px; */
+}
+
+.red-thing {
+    background-color: #90a08c;
+    color: #1D0C11;
+    border-style: groove;
+    outline-style: groove;
+}
+
+nav {
+    margin: auto;
+}
+
+.in {
+    background-color: green;
+    color: green;
+}
+
+img {
+    height: 30px;
+    width: auto;
+}
+
+#switch {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+nav label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 60px;
+    height: 25px;
+    background: grey;
+    display: block;
+    border-radius: 30px;
+    position: relative;
+}
+
+nav label:after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 15px;
+    height: 15px;
+    background: #3D405B;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+#switch:checked+label {
+    background: #616E5E;
+}
+
+#switch:checked+label:after {
+    left: calc(98% - 5px);
+    transform: translateX(-100%);
+}
+
+nav>label:active:after {
+    width: 30px;
+}
+
+.dark {
+    background-color: #1D0C11;
+    color: #F5F5F5;
+}
+
+.dark form {
+    background-color: #1D0C11;
+    color: #F5F5F5;
+}
+
+.dark button {
+    background-color: #F5F5F5;
+    color: #616E5E;
+}
+
+/* .dark a {
+    color: #F4F1DE;
+} */
+
+#content {
+    display: flexbox;
+    margin-left: 30vh;
+    margin-right: 30vh;
+}
+
+#dark_mode {
+    display: inline;
+}

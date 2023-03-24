@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %} {{title}} {% endblock %}
+{% block content %}
+<h1 class="title">{{title}}</h1>
+{% for cupcake in cupcakes %}
+<div class="grid-container">
+    <div class="grid-item">
+        <div class="poster_details">
+            {% if cupcake.image %}
+            <img src="data:image/jpg;charset=utf-8;base64,{{ cupcake.image.img | b64encode }}"
+                alt="{{ cupcake.flavor }} Cupcake" class="grid-image">
+            {% else %}
+            <img src="{{ cupcake.img }}" alt="{{ cupcake.flavor }} Cupcake">
+            {% endif %}
+            <ul class="cupcake-details">
+                <li>
+                    <a href="/api/cupcakes/{{cupcake.id}}">{{cupcake.flavor}}</a>
+                </li>
+                <li>
+                    <a href="/api/cupcakes/{{cupcake.size}}"> {{cupcake.size}}</a>
+                </li>
+                <li>
+                    <a href="/api/cupcakes/{{cupcake.rating}}">{{cupcake.rating}}</a>
+                </li>
+            </ul>
+        </div>
+        <!-- <button class="edit" data-id="{{cupcake.id}}" formaction="/api/cupcakes/{{cupcake.id}}/edit">edit</button>
+        <button class="delete" data-id="{{cupcake.id}}" formaction="/">delete</button> -->
+    </div>
+</div>
+{% else %}
+<div class="banner">
+    <h1>
+        No cupcakes yet.
+    </h1>
+</div>
+{% endfor %}
+{% endblock %}
